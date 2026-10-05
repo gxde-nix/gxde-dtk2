@@ -1,0 +1,19 @@
+--- a/dstyleplugin/dstyleplugin.pro
++++ b/dstyleplugin/dstyleplugin.pro
+@@ -6,7 +6,7 @@
+ 
+ QT        += core gui widgets widgets-private core-private gui-private
+ CONFIG    += link_pkgconfig c++11
+-PKGCONFIG += dtkwidget
++PKGCONFIG += dtk2widget-qt5
+ 
+ TARGET = dstyleplugin-gxde
+ TEMPLATE = lib
+--- a/dstyleplugin/config.tests/dtkwidget/dtkwidget.pro
++++ b/dstyleplugin/config.tests/dtkwidget/dtkwidget.pro
+@@ -1,4 +1,4 @@
+ CONFIG += qt c++11 link_pkgconfig
+-PKGCONFIG += dtkwidget
++PKGCONFIG += dtk2widget-qt5
+ 
+ SOURCES += main.cpp

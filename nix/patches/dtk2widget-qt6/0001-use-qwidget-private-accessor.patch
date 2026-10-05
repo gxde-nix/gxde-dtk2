@@ -1,0 +1,24 @@
+--- a/src/widgets/dapplication.cpp
++++ b/src/widgets/dapplication.cpp
+@@ -17,12 +17,7 @@
+ 
+ #include <QtGlobal>
+ #ifdef Q_OS_LINUX
+-#ifdef private
+-#undef private
+-#endif
+-#define private public
+ #include <QWidget>
+-#undef private
+ #endif
+ #include <QDebug>
+ #include <QDir>
+@@ -1232,7 +1227,7 @@
+ 
+                     if (widget->style() != light_style) {
+                         widget->style()->deleteLater();
+-                        widget->d_func()->setStyle_helper(light_style, false);
++                        QWidgetPrivate::get(widget)->setStyle_helper(light_style, false);
+                     }
+ 
+                     for (QWidget *w : widget->findChildren<QWidget *>()) {

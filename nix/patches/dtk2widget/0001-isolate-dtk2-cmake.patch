@@ -1,0 +1,20 @@
+--- a/dtk_cmake.prf
++++ b/dtk_cmake.prf
+@@ -15,7 +15,7 @@
+ 
+ MODULE_NAME=$$replace(TARGET,"dtk","")
+ MODULE_NAME=$$capitalizingString($$MODULE_NAME)
+-CMAKE_MODULE=Dtk$$MODULE_NAME
++CMAKE_MODULE=Dtk2Qt5$$MODULE_NAME
+ WORK_DIR=$$_PRO_FILE_PWD_
+ 
+ message("config cmake module: $$CMAKE_MODULE")
+@@ -37,7 +37,7 @@
+ 
+ CMAKE_CONTENT += "set($${CMAKE_MODULE_INCLUDE_DIR} $${INC_DIR})"
+ CMAKE_CONTENT += "set($${CMAKE_MODULE_TOO_DIR} $${TOOL_DIR})"
+-CMAKE_CONTENT += "set($${CMAKE_MODULE}_LIBRARIES $$TARGET$$LINK_LIBRARIES)"
++CMAKE_CONTENT += "set($${CMAKE_MODULE}_LIBRARIES dtk2widget-qt5$$LINK_LIBRARIES)"
+ CMAKE_CONTENT += "include_directories(\"${"$${CMAKE_MODULE_INCLUDE_DIR}"}\")"
+ 
+ CMAKE_DIR=$$WORK_DIR/../cmake/$${CMAKE_MODULE}
